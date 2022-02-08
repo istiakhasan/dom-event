@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        oneak gulo parent r chaild er moddhey jokhon event handler add kori tobe astey astey 
+        prothome  capture korar porey  shey sob chey lowest element k agey event ta k triger korbe  thn  uporer ta , then uprer ta , then uporer ta k triger korbe 
+     -->
+    <h2>Event bubble </h2>
+    <section id="section-container">
+        <h4>
+            Bubble list
+        </h4>
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum.</li>
+            <li id="second-item" class="item">Hic, tempore?</li>
+            <li class="item">Omnis, consequuntur.</li>
+            <li class="item">Magni, vel.</li>
+            <li class="item">Quisquam, vitae.</li>
+            <li class="item">Inventore, aliquam.</li>
+        </ul>
+    </section>
+
+
+    <script>
+  document.getElementById('second-item').addEventListener('click',function(e){
+      console.log('second item click')
+      e.stopImmediatePropagation()
+  })
+  document.getElementById('list-container').addEventListener('click',function(){
+      console.log('ul item click')
+  })
+  document.getElementById('section-container').addEventListener('click',function(){
+      console.log('section clicked')
+  })
+    </script>
+    
+</body>
+</html>
